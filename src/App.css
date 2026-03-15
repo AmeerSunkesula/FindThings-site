@@ -1,0 +1,451 @@
+.RecipeRoot {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    min-height: calc(100vh - 70px);
+    width: 100%;
+}
+
+.RecipeRoot a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.RecipeCard {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: white;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    overflow: hidden;
+    text-align: left;
+    height: 100%;
+}
+
+.RecipeCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.RecipeCardImageContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.RecipeImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.RecipeBadge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.RecipeContent {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 1;
+    font-family: 'Lato', sans-serif;
+}
+
+.RecipeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #666;
+    font-family: 'Lato', sans-serif;
+}
+
+.RecipeCuisine {
+    font-weight: 700;
+    color: #ff6b6b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #ffecec;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.RecipeRating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.RecipeName {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #2d3436;
+    line-height: 1.4;
+    font-family: 'Roboto', sans-serif;
+}
+
+.RecipeStats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-top: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+.StatItem {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.StatLabel {
+    font-size: 0.7rem;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.StatValue {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.RecipeTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+    font-family: 'Lato', sans-serif;
+}
+
+.RecipeTag {
+    font-size: 0.7rem;
+    color: #555;
+    background: #f0f2f5;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.Header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 1rem 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+.Header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #ff6b6b;
+    letter-spacing: -0.5px;
+}
+
+.RecipeContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.PaginationButton {
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ff6b6b;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.2);
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.PaginationButton:hover:not(:disabled) {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.3);
+}
+
+.PaginationButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.PageInfo {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.Links {
+    display: flex;
+    list-style: none;
+    gap: 0.5em;
+}
+
+.Link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.Link:hover {
+    color: #ff6b6b;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    text-align: left;
+    cursor: default;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .details {
+        grid-template-columns: 1fr;
+    }
+}
+
+.details-image-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.details-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.details-content {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    padding-top: 10px;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #666;
+    font-family: 'Lato', sans-serif;
+}
+
+.price,
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.category {
+    font-weight: 700;
+    color: #ff6b6b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #ffecec;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.name {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3436;
+    line-height: 1.4;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 15px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+.section-title {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.inglist {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #444;
+    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+}
+
+.inst {
+    padding-left: 20px;
+    color: #444;
+    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+.product-price {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #B12704;
+    font-family: 'Arial', sans-serif;
+    margin: 15px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.product-price-symbol {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    margin-right: 2px;
+}
+
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.home-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #2d3436;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    color: #ff6b6b;
+    letter-spacing: -1px;
+}
+
+.home-subtitle {
+    font-size: 1.2rem;
+    color: #636e72;
+    margin-bottom: 40px;
+    font-family: 'Lato', sans-serif;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.home-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    font-family: 'Inter', sans-serif;
+}
+
+.home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+    background-color: #ff5252;
+}
+
+.home-button.products-btn {
+    background-color: #0984e3;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+}
+
+.home-button.products-btn:hover {
+    background-color: #0073cc;
+    box-shadow: 0 8px 25px rgba(9, 132, 227, 0.4);
+}
