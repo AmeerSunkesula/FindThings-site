@@ -14,14 +14,11 @@ function ProductDetails() {
   }
 
   return (
-    <div style={{ padding: "40px 20px", maxWidth: "1200px", margin: "0 auto" }}>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <button
-          onClick={() => navigate(-1)}
-          className="PaginationButton"
-          style={{ marginBottom: "20px" }}>
+    <div style={{ padding: "40px 20px" }}>
+      <div style={{ padding: "0 0 20px 0" }}>
+        <Link to="/products" className="PaginationButton" style={{ textDecoration: "none", display: "inline-block" }}>
           &larr; Back
-        </button>
+        </Link>
       </div>
 
       <div className="details">

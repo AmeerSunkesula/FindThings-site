@@ -49,9 +49,6 @@ function Recipes() {
           Next
         </button>
       </div>
-      <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-        <span className="PageInfo">By Ameer</span>
-      </div>
     </div>
   )
 }

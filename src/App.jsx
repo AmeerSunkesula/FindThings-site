@@ -1,5 +1,6 @@
 import { Outlet, useLocation, Link } from "react-router-dom"
 import NavBar from "./components/NavBar.jsx"
+import Footer from "./components/Footer.jsx"
 import "./App.css"
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           </div>
         </div>
       : <Outlet></Outlet>}
+      <Footer></Footer>
     </div>
   )
 }

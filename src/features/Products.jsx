@@ -50,9 +50,6 @@ function Products() {
         </button>
 
       </div>
-      <div style={{ display: "flex", justifyContent: "center", width: "100%", paddingBottom: "20px" }}>
-        <span className="PageInfo">By Ameer</span>
-      </div>
     </div>
   )
 }
